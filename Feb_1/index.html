@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Input forms</title>
+  </head>
+  <body>
+    <h1>Input forms</h1>
+
+    <hr/>
+
+    <form name="myform">
+      <div>
+        <label for="firstname">First name: </label>
+        <input type="text" name="firstname" id="firstname" />
+      </div>
+
+      <div>
+        <label for="lastname">Last name: </label>
+        <input type="text" name="lastname" id="lastname" />
+      </div>
+      <div>
+        What is your favorite color?
+
+        <ul>
+          <li>
+            <input type="radio" name="color" value="red" id="colorred" />
+            <label for="colored">Red</label>
+          </li>
+          <li>
+            <input type="radio" name="color" value="green" id="colorgreen" />
+            <label for="colorgreen">Green</label>
+          </li>
+          <li>
+            <input type="radio" name="color" value="blue" id="colorblue" />
+            <label for="coloblue">Blue</label>
+          </li>
+        </ul>
+      </div>
+      <div>
+        What pets do you own?
+
+        <ul>
+          <li>
+            <input type="checkbox" name="pet" value="dog" id="petdog" />
+            <label for="petdog">Dog</label>
+          </li>
+          <li>
+            <input type="checkbox" name="pet" value="cat" id="petcat" />
+            <label for="petcat">Cat</label>
+          </li>
+          <li>
+            <input type="checkbox" name="pet" value="iguana" id="petiguana" />
+            <label for="petiguana">Iguana</label>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <input type="submit" value="submit"/>
+      </div>
+    </form>
+  </body>
+</html>
