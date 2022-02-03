@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script>
+        function echoText() {
+            // let echovalue = document.form.echo.value;
+            let echovalue = document.getElementById("echofield").value;
+            document.getElementById("results").innerHTML = echovalue;
+        }
+    </script>
+
+    <title>Model template</title>
+</head>
+<body>
+    <h1>JS program</h1>
+    <hr>
+    <form name="form" action="javascript:echoText()">
+        <label for="echofield">Echo this text:</label>
+        <input type="text" name="echo" id="echofield">
+        <input type="submit">
+    </form>
+
+    <div id="results">(Echo text will go here)</div>
+
+
+    
+</body>
+</html>
