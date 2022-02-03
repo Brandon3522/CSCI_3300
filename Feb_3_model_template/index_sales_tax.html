@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script>
+      // let valueA = parseFloat("13.45");
+      // let valueBstr = prompt("Enter a number: ");
+      // let valueB = parseFloat(valueBstr);
+
+      // document.getElementById("myBox").innerHTML = valueB;
+
+      function computeTaxes() {
+        // Bring in input
+        // Do something with input
+        // Ouput result
+        const SALES_TAX_RATE = 0.095;
+
+        let originalPrice = document.getElementById("itemprice").value;
+
+        originalPrice = parseFloat(originalPrice);
+        let salesTax = originalPrice * SALES_TAX_RATE;
+        let totalPrice = originalPrice + salesTax;
+
+        document.getElementById("originalprice").innerHTML = originalPrice;
+        document.getElementById("salestax").innerHTML = salesTax;
+        document.getElementById("totalprice").innerHTML = totalPrice;
+      }
+    </script>
+
+    <title>Sales Tax</title>
+  </head>
+  <body>
+    <h1>Sales tax calculator</h1>
+    <hr />
+
+    <form name="taxes" action="javascript:computeTaxes()">
+      <div>
+        <label for="itemprice">Enter the price</label>
+        <input type="text" name="itemprice" id="itemprice" />
+      </div>
+      <br />
+      <div>
+        <input type="submit" value="Calculate taxes" />
+      </div>
+    </form>
+
+    <hr />
+
+    <div>Original price: <span id="originalprice"></span></div>
+
+    <div>Sales tax: <span id="salestax"></span></div>
+    <div>Total price: <span id="totalprice"></span></div>
+  </body>
+</html>
