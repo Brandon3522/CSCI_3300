@@ -1,0 +1,9 @@
+label {
+  width: 100%;
+  display: inline-block;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+}

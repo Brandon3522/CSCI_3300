@@ -7,63 +7,52 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/Sitz_Brandon_Assignment2/style.css" />
     <script>
-        function submit_book() {
-            let book_title = document.getElementById("book_title").value;
-            let book_author = document.getElementById("book_author").value;
-            let book_subject = document.getElementById("book_subject").value;
+      function submit_book() {
+        let book_title = document.getElementById("book_title").value;
+        let book_author = document.getElementById("book_author").value;
+        let book_subject = document.getElementById("book_subject").value;
 
-            document.getElementById("title").innerHTML = book_title;
-            document.getElementById("author").innerHTML = book_author;
-            document.getElementById("subject").innerHTML = book_subject;
-
-
-        }
+        document.getElementById("title").innerHTML = book_title;
+        document.getElementById("author").innerHTML = book_author;
+        document.getElementById("subject").innerHTML = book_subject;
+      }
     </script>
     <title>Brandon's Book App</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Brandon's Book App</h1>
-    <hr>
+    <hr />
 
-    <div>
-        Book Title: <span id="title"></span>
-    </div>
+    <div>Book Title: <span id="title"></span></div>
 
-    <div>
-        Author: <span id="author"></span>
-    </div>
+    <div>Author: <span id="author"></span></div>
 
-    <div>
-        Subject: <span id="subject"></span>
-    </div>
+    <div>Subject: <span id="subject"></span></div>
 
-    <br>
+    <br />
 
     <form name="book_info" action="javascript:submit_book()">
-        <div>
-            <label for="book_title">Enter the title:</label>
-            <input type="text" name="book_title" id="book_title" />
-        </div>
-        <div>
-            <label for="book_author">Enter the author:</label>
-            <input type="text" name="book_author" id="book_author" />
-        </div>
-        <div>
-            <label for="book_subject">Enter the subject:</label>
-            <input type="text" name="book_subject" id="book_subject" />
-        </div>
-        <input type="submit" value="Submit Book">
-        
+      <div>
+        <label for="book_title">Enter the title:</label>
+        <input type="text" name="book_title" id="book_title" />
+      </div>
+      <div>
+        <label for="book_author">Enter the author:</label>
+        <input type="text" name="book_author" id="book_author" />
+      </div>
+      <div>
+        <label for="book_subject">Enter the subject:</label>
+        <input type="text" name="book_subject" id="book_subject" />
+      </div>
+      <br />
+      <input type="submit" value="Submit Book" />
     </form>
 
-
-    <footer>
-        Brandon Sitz, 2022
-    </footer>
-</body>
+    <footer>Brandon Sitz, 2022</footer>
+  </body>
 </html>

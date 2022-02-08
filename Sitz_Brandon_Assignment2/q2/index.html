@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/Sitz_Brandon_Assignment2/style.css" />
+    <script>
+      function getGuitar() {
+        document.getElementById("myImage").innerHTML =
+          '<img src="images/guitar.jpg" alt="guitar">';
+      }
+    </script>
+    <title>Brandon's Image Application</title>
+  </head>
+  <body>
+    <h1>Brandon's Image Application</h1>
+    <hr />
+    <form name="myform" action="javascript:getGuitar()">
+      <input type="submit" value="Get the guitar" />
+    </form>
+    <hr />
+    <div id="myImage">(A guitar will go here.)</div>
+
+    <footer>Brandon Sitz, 2022</footer>
+  </body>
+</html>
