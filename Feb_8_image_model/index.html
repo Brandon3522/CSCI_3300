@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>guitar Button!</title>
+        <meta charset="utf-8">
+        <script>
+            function getGuitar() {
+                document.getElementById("guitars").innerHTML = '<img src="images/guitar.jpg" alt="three delicious guitars">';
+            }
+        </script>
+    </head>
+    <body>
+        <h1>guitar Button!</h1>
+        <hr>
+        <form name="myform" action="javascript:getGuitar()">
+            <input type="submit" value="Get the guitars">
+        </form>
+        <hr>
+        <div id="guitars">(guitars will go here.)</div>
+        
+    </body>
+</html>
