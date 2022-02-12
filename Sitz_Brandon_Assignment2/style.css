@@ -6,6 +6,8 @@ label {
 footer {
     position: fixed;
     bottom: 0;
+    font-family: "Times New Roman";
+    font-weight: bold;
 }
 
 body {
