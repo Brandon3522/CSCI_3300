@@ -1,21 +1,50 @@
+<!--
+    Brandon Sitz
+    Dr. Church
+    CSCI 3300-04
+    Feb 11, 2022
+-->
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/Sitz_Brandon_Assignment2/style.css" />
-    <script>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/Sitz_Brandon_Assignment2/style.css" />
+        <script>
+            function range_check() {
+                let userNumber = document.getElementById("rangeInput").value;
+                let response = "";
 
+                if (userNumber < 1) {
+                    response =
+                        "The value is lower than the minimum value of the range.";
+                } else if (userNumber >= 1 && userNumber <= 10) {
+                    response =
+                        "The value is in the range of the minimum and the maximum.";
+                } else {
+                    response = "The value is greater than the maximum value.";
+                }
 
+                document.getElementById("result").innerHTML = response;
+            }
+        </script>
+        <title>Brandon's Range Check App</title>
+    </head>
+    <body>
+        <h1>Brandon's Range Check App</h1>
+        <hr />
 
-    </script>
-    <title>Brandon's Range Check App</title>
-</head>
-<body>
-    <h1>Brandon's Range Check App</h1>
+        <form name="userInput" action="javascript:range_check()">
+            <label for="rangeInput">Enter a number:</label>
+            <input type="text" name="rangeInput" id="rangeInput" />
+            <input type="submit" value="Submit" />
+        </form>
 
+        <br />
 
+        <div id="result">(Result)</div>
 
-    <footer>Brandon Sitz, 2022</footer>
-</body>
+        <footer>Brandon Sitz &copy; 2022</footer>
+    </body>
 </html>

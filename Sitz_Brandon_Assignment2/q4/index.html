@@ -1,56 +1,59 @@
+<!--
+    Brandon Sitz
+    Dr. Church
+    CSCI 3300-04
+    Feb 11, 2022
+-->
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/Sitz_Brandon_Assignment2/style.css" />
-    <script>
-        function movie_price() {
-            let price = 0;
-            let age = document.getElementById("priceInput").value;
-            let pricePrompt = `Your ticket price is free.`;
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/Sitz_Brandon_Assignment2/style.css" />
+        <script>
+            function movie_price() {
+                let price = 0;
+                let age = document.getElementById("priceInput").value;
+                let pricePrompt = `Your ticket price is free.`;
 
-            if (age < 0) {
-                pricePrompt = `You can't have a negative age`
-                alert("Error! You can't have a negative age.");
+                if (age < 0) {
+                    pricePrompt = `You can't have a negative age`;
+                    alert("Error! You can't have a negative age.");
+                } else if (age >= 12 && age < 17) {
+                    price = 10;
+                } else if (age >= 17) {
+                    price = 13;
+                }
+
+                if (age > 12) {
+                    pricePrompt = `Your ticket price is $${price}.`;
+                }
+
+                document.getElementById("price").innerHTML = pricePrompt;
             }
-            else if (age >= 12 && age < 17) {
-                price = 10;
-            }
-            else if (age >= 17) {
-                price = 13;
-            }
+        </script>
+        <title>Brandon's Movie Ticket App</title>
+    </head>
+    <body>
+        <h1>Brandon's Movie Ticket App</h1>
+        <hr />
 
-            if (age > 12) {
-                pricePrompt = `Your ticket price is $${price}.`
-            }
+        <h3>Movie Prices by Age</h3>
+        <ul>
+            <li>Under 12: Free</li>
+            <li>12 to 16: $10</li>
+            <li>17 and older: $13</li>
+        </ul>
 
-            document.getElementById("price").innerHTML = pricePrompt;
+        <div id="price">(price)</div>
 
-        }
-    </script>
-    <title>Brandon's Movie Ticket App</title>
-</head>
-<body>
-    <h1>Brandon's Movie Ticket App</h1>
-    <hr>
+        <form name="userInput" action="javascript:movie_price()">
+            <label for="priceInput">Enter age: </label>
+            <input type="text" name="priceInput" id="priceInput" />
+            <input type="submit" value="Submit" />
+        </form>
 
-    <h3>Movie Prices by Age</h3>
-    <ul>
-        <li>Under 12: Free</li>
-        <li>12 to 16: $10</li>
-        <li>17 and older: $13</li>
-    </ul>
-
-    <div id="price">(price)</div>
-
-    <form name="userInput" action="javascript:movie_price()">
-        <label for="priceInput">Enter age: </label>
-        <input type="text" name="priceInput" id="priceInput">
-        <input type="submit" value="Submit">
-    </form>
-
-
-    <footer>Brandon Sitz, 2022</footer>
-</body>
+        <footer>Brandon Sitz &copy; 2022</footer>
+    </body>
 </html>

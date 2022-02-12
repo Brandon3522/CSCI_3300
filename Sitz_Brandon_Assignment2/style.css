@@ -1,9 +1,18 @@
 label {
-  width: 100%;
-  display: inline-block;
+    width: 100%;
+    display: inline-block;
 }
 
 footer {
-  position: fixed;
-  bottom: 0;
+    position: fixed;
+    bottom: 0;
+}
+
+body {
+    background-image: linear-gradient(grey, white);
+    background-repeat: no-repeat;
+}
+
+input[type="submit"] {
+    border-radius: 20px;
 }

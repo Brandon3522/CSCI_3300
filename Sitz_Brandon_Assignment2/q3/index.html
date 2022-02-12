@@ -1,32 +1,38 @@
+<!--
+    Brandon Sitz
+    Dr. Church
+    CSCI 3300-04
+    Feb 11, 2022
+-->
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/Sitz_Brandon_Assignment2/style.css" />
-    <script>
-        function toUpper() {
-            let userInput = document.getElementById("inputText").value;
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/Sitz_Brandon_Assignment2/style.css" />
+        <script>
+            function toUpper() {
+                let userInput = document.getElementById("inputText").value;
 
-            document.getElementById("allcaps").innerHTML = userInput.toUpperCase();
-        }
-    </script>
-    <title>Brandon's Shouting App</title>
-</head>
-<body>
-    <h1>Brandon's Shouting App</h1>
-    <hr>
+                document.getElementById("allcaps").innerHTML =
+                    userInput.toUpperCase();
+            }
+        </script>
+        <title>Brandon's Shouting App</title>
+    </head>
+    <body>
+        <h1>Brandon's Shouting App</h1>
+        <hr />
 
-    <div id="allcaps">
-        ALL CAPS!
-    </div>
+        <div id="allcaps">ALL CAPS!</div>
 
-    <form name="upper" action="javascript:toUpper()">
-        <label for="inputText">Enter statement:</label>
-        <input type="text" name="inputText" id="inputText">
-        <input type="submit" value="Convert to ALL CAPS!">
-    </form>
+        <form name="upper" action="javascript:toUpper()">
+            <label for="inputText">Enter statement:</label>
+            <input type="text" name="inputText" id="inputText" />
+            <input type="submit" value="Convert to ALL CAPS!" />
+        </form>
 
-    <footer>Brandon Sitz, 2022</footer>
-</body>
+        <footer>Brandon Sitz &copy; 2022</footer>
+    </body>
 </html>
