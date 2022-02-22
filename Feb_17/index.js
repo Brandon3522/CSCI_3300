@@ -69,3 +69,17 @@ if (isNaN(grade)) {
 }
 
 console.log(`Your grade is ${grade}`);
+
+console.log('========================================')
+let n = 5
+let x = 1
+for (let i = 1; i < n; i++) {
+    for (let j = 1; j < i; j++) {
+        for (let k = 1; k < j; k++) {
+            x += 1
+            console.log(`${x}`)
+        }
+    }
+}
+
+console.log(`x = ${x}`)
