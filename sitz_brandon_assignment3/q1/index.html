@@ -7,23 +7,68 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../style.css" />
-    <script>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../style.css" />
+        <script>
+            function largest_num() {
+                // Get input, Modify, then display result in results
+                let firstNum = document.getElementById("firstNum").value;
+                let secondNum = document.getElementById("secondNum").value;
+                let thirdNum = document.getElementById("thirdNum").value;
 
-    </script>
-    <title>Brandon's largest of Three Numbers</title>
-</head>
-<body>
-    <h1>Brandon's largest of Three Numbers</h1>
-    
-    <div>
-        
-    </div>
+                let result = "";
+                // the blank number {} is the largest
+                if (firstNum == secondNum && secondNum == thirdNum) {
+                    result = `One number (${firstNum}) is the largest.`;
+                } else if (firstNum > secondNum && firstNum > thirdNum) {
+                    result = `The first number (${firstNum}) is the largest.`;
+                } else if (secondNum > firstNum && secondNum > thirdNum) {
+                    result = `The second number (${secondNum}) is the largest.`;
+                } else if (thirdNum > firstNum && thirdNum > secondNum) {
+                    result = `The third number (${thirdNum}) is the largest.`;
+                } else if (
+                    (firstNum == secondNum && firstNum > thirdNum) ||
+                    (firstNum == secondNum && secondNum > thirdNum)
+                ) {
+                    result = `One number (${firstNum}) is the largest.`;
+                } else if (
+                    (thirdNum == secondNum && thirdNum > firstNum) ||
+                    (thirdNum == secondNum && secondNum > firstNum)
+                ) {
+                    result = `One number (${secondNum}) is the largest.`;
+                }
 
+                document.getElementById("results").innerHTML = result;
+            }
+        </script>
+        <title>Brandon's largest of Three Numbers</title>
+    </head>
+    <body>
+        <h1>Brandon's largest of Three Numbers</h1>
+        <hr />
 
-    <footer>Brandon Sitz &copy; 2022</footer>
-</body>
+        <div>
+            <form name="largest" action="javascript:largest_num()">
+                <label for="firstNum">Enter the first number: </label>
+                <input type="text" name="firstNumber" id="firstNum" />
+
+                <label for="secondNum">Enter the second number: </label>
+                <input type="text" name="secondNumber" id="secondNum" />
+
+                <label for="thirdNum">Enter the third number: </label>
+                <input type="text" name="thridNumber" id="thirdNum" />
+
+                <br />
+                <br />
+                <input type="submit" value="Determine the largest number" />
+            </form>
+        </div>
+
+        <br />
+        <div>Results: <span id="results"></span></div>
+
+        <footer>Brandon Sitz &copy; 2022</footer>
+    </body>
 </html>
