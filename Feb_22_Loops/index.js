@@ -68,7 +68,7 @@ do {
 //==============================================
 // Guess the number
 
-/* let hidden = Math.floor(Math.random() * 100 + 1);
+let hidden = Math.floor(Math.random() * 100 + 1);
 let guess = 0;
 let tries = 0;
 do {
@@ -81,4 +81,4 @@ do {
     }
     tries++;
 } while (guess != hidden);
-console.log("You got it right in " + tries + "!"); */
+console.log("You got it right in " + tries + "!");

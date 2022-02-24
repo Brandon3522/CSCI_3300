@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        function execute() {
+            let number = document.form.number.value;
+
+            number = parseInt(number);
+
+            const SYMBOL = '#';
+
+            let message = '';
+
+            for (let j = 1; j <= number; j++) {
+                for (let i = number; i > j; i--) {
+                message += SYMBOL;
+                }
+                message += "\n";
+            }
+            
+            
+
+            document.getElementById('result').innerHTML = message;
+
+        }
+
+    </script>
+    <title>For loop shapes</title>
+</head>
+<body>
+    <h1>For loop shapes</h1>
+    <hr>
+
+    <form name="form" action="javascript:execute()">
+        <label for="number">Enter a positive number: </label>
+        <input type="number" name="number" id="number">
+
+        <input type="submit">
+    </form>
+
+    <hr>
+
+    <div id="result">Results:</div>
+    
+</body>
+</html>

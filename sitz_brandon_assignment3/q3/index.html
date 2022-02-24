@@ -12,13 +12,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style.css" />
     <script>
+        function even_odd_float() {
+                // Get input, check conditionals, return value
+                let firstNum = document.getElementById("firstNum").value;
+                let secondNum = document.getElementById("secondNum").value;
+                let thirdNum = document.getElementById("thirdNum").value;
+
+                let result = "";
+
+                if (true) {
+                    result;
+                }
+
+                document.getElementById("results").innerHTML = result;
+
+            }
         
     </script>
     <title>Brandon's Even, Odd, Float, or None of the Above</title>
 </head>
 <body>
     <h1>Brandon's Even, Odd, Float, or None of the Above</h1>
-    
+    <hr>
+
+    <div>
+        <form name="middle" action="javascript:even_odd_float()">
+            <label for="firstNum">Enter the first number: </label>
+            <input type="text" name="firstNumber" id="firstNum" />
+
+            <label for="secondNum">Enter the second number: </label>
+            <input type="text" name="secondNumber" id="secondNum" />
+
+            <label for="thirdNum">Enter the third number: </label>
+            <input type="text" name="thridNumber" id="thirdNum" />
+
+            <br />
+            <br />
+            <input type="submit" value="Determine the type of number" />
+        </form>
+    </div>
+
+    <br />
+    <div>Results: <span id="results"></span></div>
 
 
     <footer>Brandon Sitz &copy; 2022</footer>
