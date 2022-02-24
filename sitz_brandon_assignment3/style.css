@@ -10,7 +10,7 @@ footer {
     font-weight: bold;
 }
 
-body {
+html {
     background-image: linear-gradient(grey, white);
     background-repeat: no-repeat;
 }
