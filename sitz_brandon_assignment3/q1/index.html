@@ -17,6 +17,9 @@
                 let firstNum = document.getElementById("firstNum").value;
                 let secondNum = document.getElementById("secondNum").value;
                 let thirdNum = document.getElementById("thirdNum").value;
+                firstNum = parseInt(firstNum);
+                secondNum = parseInt(secondNum);
+                thirdNum = parseInt(thirdNum);
 
                 let result = "";
                 // the blank number {} is the largest
@@ -24,6 +27,7 @@
                     result = `One number (${firstNum}) is the largest.`;
                 } else if (firstNum > secondNum && firstNum > thirdNum) {
                     result = `The first number (${firstNum}) is the largest.`;
+                    console.log("first");
                 } else if (secondNum > firstNum && secondNum > thirdNum) {
                     result = `The second number (${secondNum}) is the largest.`;
                 } else if (thirdNum > firstNum && thirdNum > secondNum) {

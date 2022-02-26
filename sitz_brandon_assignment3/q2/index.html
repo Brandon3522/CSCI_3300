@@ -18,13 +18,18 @@
                 let secondNum = document.getElementById("secondNum").value;
                 let thirdNum = document.getElementById("thirdNum").value;
 
+                firstNum = parseInt(firstNum);
+                secondNum = parseInt(secondNum);
+                thirdNum = parseInt(thirdNum);
+
                 let result = "";
 
                 if (firstNum == secondNum && secondNum == thirdNum) {
                     result = `The only number (${firstNum}) is the middle number.`;
-                } else if (firstNum == secondNum || secondNum == thirdNum) {
-                    // fix
-                    result = `The only number (${firstNum}) is the middle number.`;
+                } else if (firstNum == secondNum) {
+                    result = `A number is repeated (${firstNum}) is the repeated number.`;
+                } else if (secondNum == thirdNum) {
+                    result = `A number is repeated (${secondNum}) is the repeated number.`;
                 } else if (
                     (firstNum < secondNum && firstNum > thirdNum) ||
                     (firstNum > secondNum && firstNum < thirdNum)
