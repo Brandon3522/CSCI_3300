@@ -54,38 +54,43 @@ If both invalid, report both numbers are invalid.
 
 */
 
-function is_greater() {
-    let num1 = 0;
-    let num2 = 0;
+// function is_greater() {
+//     let num1 = 0;
+//     let num2 = 0;
 
-    num1 = prompt('Enter the first number: ');
-    num2 = prompt('Enter the second number: ');
+//     num1 = prompt('Enter the first number: ');
+//     num2 = prompt('Enter the second number: ');
 
-    num1 = parseInt(num1);
-    num2 = parseInt(num2);
+//     num1 = parseInt(num1);
+//     num2 = parseInt(num2);
 
-    if (isNaN(num1) && isNaN(num2)) {
-        console.log('Both numbers are not valid');  // Use alert, or requried method on test
-    }
-    else if (isNaN(num2)) {
-        console.log('Number 2 is not valid');
-    }
-    else if (isNaN(num1)) {
-        console.log('Number 1 is not valid');
-    }
-    else if (num1 > num2) {
-        console.log(`Number 1 is greater: ${num1}`);
-    }
-    else if (num2 > num1) {
-        console.log(`Number 2 is greater: ${num2}`);
-    } 
-    else if (num1 == num2) {
-        console.log('Numbers are equal');
-    }
+//     if (isNaN(num1) && isNaN(num2)) {
+//         console.log('Both numbers are not valid');  // Use alert, or requried method on test
+//     }
+//     else if (isNaN(num2)) {
+//         console.log('Number 2 is not valid');
+//     }
+//     else if (isNaN(num1)) { 
+//         console.log('Number 1 is not valid');
+//     }
+//     else if (num1 > num2) {
+//         console.log(`Number 1 is greater: ${num1}`);
+//     }
+//     else if (num2 > num1) {
+//         console.log(`Number 2 is greater: ${num2}`);
+//     } 
+//     else if (num1 == num2) {
+//         console.log('Numbers are equal');
+//     }
 
-}
+// }
 
-is_greater();
+// is_greater();
 
 console.log("===================================");
 
+console.log(isNaN('1'));
+console.log(isNaN(1));
+console.log(isNaN('bob'));
+
+console.log(108165236279178312660610114131826512483935470542850824183737259708197206310322);
