@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script>
+            function getGrocery() {
+                let total = 0;
+                let message = "<table><tr><th>Item</th><th>Price</th></tr>";
+                let product = "";
+                let price;
+
+                product = prompt("Enter product.");
+
+                while (product != "done") {
+                    product = prompt("Enter product.");
+
+                    if (product == "done") {
+                        break;
+                    }
+
+                    price = prompt("Enter the price.");
+                    price = parseFloat(price);
+
+                    message += `<tr><td>${product}</td><td>${price}</td></tr>`;
+                    total += price;
+
+                    product = prompt("Enter product.");
+                }
+
+                message += "</table> Total cost: $" + total.toFixed(2);
+
+                document.getElementById("results").innerHTML = message;
+            }
+        </script>
+        <title>Document</title>
+    </head>
+    <body>
+        <form action="javascript:getGrocery()">
+            <input type="submit" value="Enter Gorcery">
+        </form>
+        <div id="results">Reults</div>
+    </body>
+</html>
