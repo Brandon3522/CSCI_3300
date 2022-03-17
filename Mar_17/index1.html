@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script>
+            function getWords() {
+                let catCount = 0;
+                let dogCount = 0;
+                let message = '';
+                let word = '';
+                // Check for concatanated words of cat and dog
+                // IndexOf / word.IndexOf('cat') >= 0
+                // IndexOf returns negative if the word is not found
+
+                do {
+                    word = prompt('Enter a word.').toLowerCase();
+
+                    if (word.indexOf('dog') >= 0) {
+                        dogCount++;
+                    }
+
+                    if (word.indexOf('cat') >= 0) {
+                        catCount++;
+                    }
+
+
+
+                } while (word != 'done');
+
+                message += `<p>There are ${catCount} cats and ${dogCount} dogs. </p>`;
+
+
+                document.getElementById('results').innerHTML = message;
+            }
+        </script>
+        <title>Document</title>
+    </head>
+    <body>
+        <form name="3" action="javascript:getWords()">
+            <input type="submit" value="Get Words">
+        </form>
+        <br>
+
+        <div id="results">Reults</div>
+    </body>
+</html>
