@@ -1,0 +1,50 @@
+<!--
+    Brandon Sitz
+    Dr. Church
+    CSCI 3300-04
+    Mar 17, 2022
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../style.css" />
+        <script>
+            function secret_word() {
+                const SECRET = "gpu";
+
+                let input = prompt("Enter the secret word.");
+                while (input != SECRET) {
+                    let input = prompt("Enter the secret word.");
+                    if (input = SECRET) {
+                        document.getElementById("gpu").innerHTML =
+                            '<img src="images/gpu.jpg" alt="GPU">';
+                    }
+                }
+            }
+        </script>
+        <title>Brandon's Secret Message Progam</title>
+    </head>
+    <body>
+        <h1>Brandon's Secret Message Progam</h1>
+        <hr />
+
+        <div class="body">
+            <form name="userInput" action="javascript:secret_word()">
+                <input
+                    type="submit"
+                    value="Click here to view the secret message..."
+                />
+            </form>
+        </div>
+
+        <br />
+        <br />
+
+        <div id="gpu">(Enter the secret)</div>
+
+        <footer>&copy; 2022 Brandon Sitz</footer>
+    </body>
+</html>
