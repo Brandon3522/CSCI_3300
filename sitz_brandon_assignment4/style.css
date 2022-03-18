@@ -3,9 +3,8 @@ label {
     display: inline-block;
 }
 
-.body {
-    background-image: linear-gradient(grey, white);
-    background-repeat: no-repeat;
+#secret {
+    font-size: xx-large;
 }
 
 footer {

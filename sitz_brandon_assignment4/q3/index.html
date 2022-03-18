@@ -7,31 +7,50 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../style.css" />
-    <script>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../style.css" />
+        <script>
+            function getWords() {
+                let catCount = 0;
+                let dogCount = 0;
+                let message = "";
+                let word = "";
+                // Check for concatanated words of cat and dog
+                // IndexOf / word.IndexOf('cat') >= 0
+                // IndexOf returns negative if the word is not found
 
-    </script>
-    <title>Brandon's Dog and Cat Counter</title>
-</head>
-<body>
-    <h1>Brandon's Dog and Cat Counter</h1>
-    <hr>
+                do {
+                    word = prompt("Enter a word.").toLowerCase();
 
-    <div>
+                    if (word.indexOf("dog") >= 0) {
+                        dogCount++;
+                    }
 
-    </div>
+                    if (word.indexOf("cat") >= 0) {
+                        catCount++;
+                    }
+                } while (word != "done");
 
+                message += `<p>There are ${catCount} cats and ${dogCount} dogs. </p>`;
 
-    <div>
-        
-    </div>
+                document.getElementById("results").innerHTML = message;
+            }
+        </script>
+        <title>Brandon's Dog and Cat Counter</title>
+    </head>
+    <body>
+        <h1>Brandon's Dog and Cat Counter</h1>
+        <hr />
 
+        <form name="words" action="javascript:getWords()">
+            <input type="submit" value="Get Words" />
+        </form>
+        <br />
 
+        <div id="results">Results</div>
 
-
-    <footer>&copy; 2022 Brandon Sitz</footer>
-</body>
+        <footer>&copy; 2022 Brandon Sitz</footer>
+    </body>
 </html>

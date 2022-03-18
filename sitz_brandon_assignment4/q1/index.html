@@ -14,11 +14,20 @@
         <script>
             function secret_word() {
                 const SECRET = "gpu";
+                let input = "";
+                let message = "GPU!!!!!!!!!!!";
 
-                let input = prompt("Enter the secret word.");
+                input = prompt("Enter the secret word.");
+                if (input == SECRET) {
+                    document.getElementById("secret").innerHTML = message;
+                    document.getElementById("gpu").innerHTML =
+                        '<img src="images/gpu.jpg" alt="GPU">';
+                }
+
                 while (input != SECRET) {
-                    let input = prompt("Enter the secret word.");
-                    if (input = SECRET) {
+                    input = prompt("Enter the secret word.");
+                    if (input == SECRET) {
+                        document.getElementById("secret").innerHTML = message;
                         document.getElementById("gpu").innerHTML =
                             '<img src="images/gpu.jpg" alt="GPU">';
                     }
@@ -30,6 +39,7 @@
     <body>
         <h1>Brandon's Secret Message Progam</h1>
         <hr />
+        <br />
 
         <div class="body">
             <form name="userInput" action="javascript:secret_word()">
@@ -41,6 +51,9 @@
         </div>
 
         <br />
+        <br />
+
+        <div id="secret"></div>
         <br />
 
         <div id="gpu">(Enter the secret)</div>

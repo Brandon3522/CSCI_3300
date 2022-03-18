@@ -7,31 +7,49 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../style.css" />
-    <script>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../style.css" />
+        <script>
+            function getGrocery() {
+                let total = 0;
+                let message = "<table><tr><th>Item</th><th>Price</th></tr>";
+                let product = "";
+                let price;
 
-    </script>
-    <title>Brandon's Grocery Shopping List</title>
-</head>
-<body>
-    <h1>Brandon's Grocery Shopping List</h1>
-    <hr>
+                while (product != "done") {
+                    product = prompt("Enter product.");
 
-    <div>
+                    if (product == "done") {
+                        break;
+                    }
 
-    </div>
+                    price = prompt("Enter the price.");
+                    price = parseFloat(price);
 
+                    message += `<tr><td>${product}</td><td>${price}</td></tr>`;
+                    total += price;
+                }
 
-    <div>
-        
-    </div>
+                message += "</table> Total cost: $" + total.toFixed(2);
 
+                document.getElementById("results").innerHTML = message;
+            }
+        </script>
+        <title>Brandon's Grocery Shopping List</title>
+    </head>
+    <body>
+        <h1>Brandon's Grocery Shopping List</h1>
+        <hr />
 
+        <form action="javascript:getGrocery()">
+            <input type="submit" value="Enter Groceries" />
+        </form>
 
+        <br />
+        <div id="results">Results</div>
 
-    <footer>&copy; 2022 Brandon Sitz</footer>
-</body>
+        <footer>&copy; 2022 Brandon Sitz</footer>
+    </body>
 </html>
