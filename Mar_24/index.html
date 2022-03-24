@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script>
+            function address() {
+                // Get states from selection menu
+                let states = document.forms.address.usstate;
+                let message = '';
+
+                for (let i = 0; i < states.length; i++) {
+                    if(states[i].selected) {
+                        message += states[i].value + ', ';
+                    }
+                    
+                }
+
+               message = message.slice(0, -2);
+
+               document.getElementById('results').innerHTML = message;
+            }
+        </script>
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>Hello</h1>
+        <hr>
+        <br>
+
+        <!-- Selection menu -->
+        <form name="address" action="javascript:address()">
+            Select a state:
+            <select name="usstate" size="3" multiple> <!-- Size increases number shown at a time -->
+                <option value="TN">Tennessee</option>
+                <option value="KY">Kentucky</option>
+                <option value="GA">Georgia</option>
+                <option value="VA">Virginia</option>
+            </select>
+
+            <input type="submit">
+        </form>
+
+        <br>
+        <div id="results">(Result)</div>
+
+
+
+    </body>
+</html>

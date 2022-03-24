@@ -1,0 +1,81 @@
+<!-- MEMES -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <Script>
+        let memeimage = '';
+        let memetext = '';
+
+        function setImage(images) {
+            let image = '';
+
+            for (let i = 0; i < images.length; i++) {
+                if (images[i].selected) {
+                    image = images[i].value;
+                }
+                
+            }
+            alert(image);
+
+            memeimage = `<img src='${image} alt='meme image'>`;
+            document.getElementById('mymeme').innerHTML = memeimage;
+
+        }
+
+        function setText(text) {
+            memetext = `<span id='memetext'>${text}</span>`;
+            document.getAnimations('mymeme').innerHTML = memeimage + memetext;
+
+
+
+        }
+
+
+
+
+    </Script>
+    <title>Document</title>
+</head>
+<body>
+
+    <header>
+        <h1>Memes</h1>
+        <hr>
+    </header>
+    
+    <main>
+        <!-- Input elements-->
+        <!--Selection Menu-->
+        <select name="image" onchange="javascript:setImage(this)">
+            <option value="images/cat.jpg">Cat</option>
+            <option value="images/sky.jpg">Sky</option>
+            <option value="images/snowman.jpg">Snowman</option>
+            <option value="images/stupid.jpg">Dumb</option>
+            <option value="images/tide.jpg">Tide Pod</option>
+        </select>
+        <br>
+
+        <div>
+            Set text: <input type="text" name="memetext" onchange="javascript:setText()">
+        </div>
+
+
+        <hr>
+
+
+
+        <div id="mymeme"></div>
+
+
+    </main>
+
+    
+
+
+    
+</body>
+</html>
