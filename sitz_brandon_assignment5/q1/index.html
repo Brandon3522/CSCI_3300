@@ -1,0 +1,100 @@
+<!--
+    Brandon Sitz
+    Dr. Church
+    CSCI 3300-04
+    Apr 1, 2022
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../style.css" />
+        <title>Brandon's Number Examination Tool</title>
+        <script>
+            /*
+                User enters values until -1
+                isNaN skip value
+                While loop while true, -1 break
+                    Report if each num is even, odd, float
+                    Report total and average, none = 'No values entered'
+                    Report total and average of just floats, none = 'No floating-point values entered'
+                    Round all values displayed to 2 places, toFixed function
+            */
+            function examineNumbers() {
+                let list = document.getElementById("results");
+                let numType = "";
+                let finalMessage = "";
+                let sum = 0;
+                let average = 0;
+                let numValues = 0;
+                let numberMessage = "No values were entered.";
+                let floatAverage = 0.0;
+                let floatSum = 0.0;
+                let floatNumValues = 0;
+                let floatMessage = "No floating-point values were entered.";
+                let sentinal = -1;
+
+                while (true) {
+                    let number = prompt("Enter a number");
+                    if (number == sentinal) {
+                        break;
+                    }
+
+                    if (number % 1 == 0) {
+                        if (number % 2 == 0) {
+                            numType = ` is an even value`;
+                        } else {
+                            numType = ` is an odd value`;
+                        }
+                    } else if (number % 1 != 0) {
+                        numType = ` is a floating-point value`;
+                    }
+
+                    if (!isNaN(number) && number != -1) {
+                        let entry = document.createElement("li");
+                        entry.appendChild(
+                            document.createTextNode(number + numType));
+                        list.appendChild(entry);
+
+                        number = parseFloat(number);
+                        numValues += 1;
+                        sum += number;
+                        if (number % 1 != 0) {
+                            floatSum += number;
+                            floatNumValues += 1;
+                        }
+                    }
+                }
+
+                average = sum / numValues;
+                floatAverage = floatSum / floatNumValues;
+                if (sum != 0) {
+                    numberMessage = `The sum is ${sum.toFixed(2)} 
+                        and the average is ${average.toFixed(2)}.`;
+                }
+                if (floatSum != 0) {
+                    floatMessage = `The sum of only the floating point values is ${floatSum.toFixed(2)} 
+                        with an average of ${floatAverage.toFixed(2)}.`;
+                }
+                finalMessage = numberMessage + " " + floatMessage;
+                document.getElementById("total").innerHTML = finalMessage;
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Brandon's Number Examination Tool</h1>
+        <hr />
+
+        <form action="javascript:examineNumbers()">
+            <input type="submit" value="Enter numbers" />
+        </form>
+
+        <ul id="results"></ul>
+        <br />
+        <div id="total">(Total/Average)</div>
+
+        <footer>&copy; 2022 Brandon Sitz</footer>
+    </body>
+</html>

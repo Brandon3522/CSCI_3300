@@ -1,0 +1,65 @@
+<!--
+    Brandon Sitz
+    Dr. Church
+    CSCI 3300-04
+    Apr 1, 2022
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../style.css" />
+        <title>Brandon's The Letter Matrix</title>
+        <script>
+            /*
+                When user types 2 nums in box, print "A", 'B', 'C' in order
+                    If out of alphabet, start back at 'A'
+                    End of row reached, start at next row
+            */
+            function letter_matrix() {
+                let rows = document.getElementById("firstNumber").value;
+                let columns = document.getElementById("secondNumber").value;
+                let results = "";
+                let letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+                let k = 0;
+                for (let i = 0; i < rows; i++) {
+                    for (let j = 0; j < columns; j++) {
+                        results += letters.charAt(k % 26);
+                        k++;
+                    }
+                    results += "<br></br>";
+                }
+
+                document.getElementById("results").innerHTML = results;
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Brandon's The Letter Matrix</h1>
+        <hr />
+        <!--
+        2 input boxes for rows and columns of matrix
+        Empty 'Pre' element 
+        -->
+        <form name="myForm" action="javascript:letter_matrix()">
+            <label for="firstNumber">Enter the number of rows:</label>
+            <input type="text" name="firstNumber" id="firstNumber" />
+
+            <label for="secondNumber">Enter the number of columns:</label>
+            <input type="text" name="secondNumber" id="secondNumber" />
+            <br>
+            <br>
+            <input type="submit" name="submitNumbers" id="submitNumbers" />
+        </form>
+        <br />
+
+        <pre id="results">
+        (Results)
+        </pre>
+
+        <footer>&copy; 2022 Brandon Sitz</footer>
+    </body>
+</html>

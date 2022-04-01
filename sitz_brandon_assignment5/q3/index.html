@@ -1,0 +1,91 @@
+<!--
+    Brandon Sitz
+    Dr. Church
+    CSCI 3300-04
+    Apr 1, 2022
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../style.css" />
+        <title>Brandon's Two Trains Tool</title>
+        <script>
+            /*
+                assign input, convert mph to miles per minute
+                set Train A and B distance 
+                do while loop
+                    increment Train A distance
+                    decrement Train B distance
+                    loop until Train A distance < Train B
+                    report position every minute
+                display total number of minutes elapsed
+            */
+            function two_trains() {
+                let trainA = document.getElementById("trainASpeed").value;
+                let trainB = document.getElementById("trainBSpeed").value;
+                let distance = document.getElementById("distance").value;
+                trainA = parseFloat(trainA);
+                trainB = parseFloat(trainB);
+                distance = parseFloat(distance);
+                let trainAdistance = 0;
+                let trainBdistance = distance;
+                let totalMinutes = 1;
+                let report = "";
+                let list = document.getElementById("results");
+
+                let trainAmilesPerMinute = trainA / 60;
+                let trainBmilesPerMinute = trainB / 60;
+
+                do {
+                    trainAdistance += trainAmilesPerMinute;
+                    trainBdistance -= trainBmilesPerMinute;
+
+                    report += `Minute ${totalMinutes} Train A position: ${trainAdistance.toFixed(2)}
+                         miles, Train B position: ${trainBdistance.toFixed(2)} miles.`;
+                    let entry = document.createElement("li");
+                    entry.appendChild(document.createTextNode(report));
+                    list.appendChild(entry);
+
+                    report = "";
+                    totalMinutes += 1;
+                } while (trainAdistance < trainBdistance);
+
+                document.getElementById("total").innerHTML = `The two trains met after 
+                    ${totalMinutes - 1} minutes.`;
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Brandon's Two Trains Tool</h1>
+        <hr />
+
+        <form name="myForm" action="javascript:two_trains()">
+            <label for="trainASpeed">Train A's speed (Miles Per Hour):</label>
+            <input type="text" name="trainASpeed" id="trainASpeed" />
+            <br />
+            <br />
+            <label for="trainBSpeed">Train B's speed (Miles Per Hour):</label>
+            <input type="text" name="trainBSpeed" id="trainBSpeed" />
+            <br />
+            <br />
+            <label for="distance">Distance between Eastford and Westford (Miles):</label>
+            <input type="text" name="distance" id="distance" />
+            <br />
+            <br />
+            <input type="submit" id="submit" />
+        </form>
+        <br />
+
+        <!-- Unordered list, name = results -->
+        <ul id="results"></ul>
+        <br />
+        <div id="total">(Total Minutes)</div>
+        <br />
+        <br />
+
+        <footer>&copy; 2022 Brandon Sitz</footer>
+    </body>
+</html>
