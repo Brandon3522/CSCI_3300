@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        let myData = []; // Array of length 0
+
+        function getSum(myData) {
+            let sum = 0;
+
+            for (let i = 0; i < myData.length; i++) {
+                sum += myData[i];
+            }
+
+            return sum;
+        }
+
+        function getMin(myData) {
+            if (myData.length == 0) {
+                return "No data entered";
+            }
+
+            let min = myData[0];
+
+            for (let num of myData) {
+                if (num < min) {
+                    min = num;
+                }
+            }
+
+            return min;
+        }
+
+        function getMax(myData) {
+            if (myData.length == 0) {
+                return "No data entered";
+            }
+
+            let max = myData[0];
+
+            for (let num of myData) {
+                if (num > max) {
+                    max = num;
+                }
+            }
+            return max;
+        }
+
+        function buildMessage(myData) {
+            let message = "<ul>";
+            for (let i = 0; i < myData.length; i++) {
+                message += `<li>${myData[i]}</li>`;
+            }
+
+            message += "</ul>";
+
+            return message;
+        }
+
+        function loadData() {
+            let value = document.Myform.number.value;
+            let summary = '';
+
+            document.Myform.number.value = ''; // Reset displayed value
+
+            value = parseFloat(value);
+
+            if (isNaN(value)) {
+                alert("This is not a number");
+            }
+            else {
+                myData.push(value);
+            }
+
+            let message = buildMessage(myData);
+
+            let min = getMin(myData);
+
+            summary = `The sum is: ${getSum(myData)}. ` + `The minimum is: ${min}. ` + 
+                `The maximum is: ${getMax(myData)}.`;
+
+            document.getElementById('summary').innerHTML = summary;
+
+            document.getElementById("results").innerHTML = message;
+        }
+
+    </script>
+    <title>Document</title>
+</head>
+<body>
+
+    <form name="Myform" action="javascript:loadData()">
+        Enter a number:
+        <input type="text" name="number">
+        <input type="submit">
+    </form> 
+
+    <div id="results"></div>
+
+    <div id="summary"></div>
+    
+</body>
+</html>
