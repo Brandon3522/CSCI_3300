@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        let student_gpas = {};
+        function addGPA() {
+            let name = document.getElementById('firstname').value;
+            let gpa = document.getElementById('gpa').value;
+
+            let message = '<ul>';
+
+            gpa = parseFloat(gpa);
+            student_gpas[name] = gpa;
+
+            // for (let name in student_gpas) {
+            //     message += `<li>${name} GPA: ${student_gpas[name]}.</li>`;
+            // }
+            // message += '</ul>';
+
+            // document.getElementById('results').innerHTML = message;
+
+
+        }
+
+        function getGPA() {
+            let name = document.getElementById("firstnameGet").value;
+            let message = '<ul>';
+
+            if (name in student_gpas) {
+                message += `<li>${name} GPA: ${student_gpas[name]}.</li>`;
+            }
+            else {
+                message = `<li>${name} is not enrolled</li>`;
+            }
+
+            message += '</ul>';
+
+            document.getElementById('results').innerHTML = message;
+        }
+    </script>
+    <title>Student GPA</title>
+</head>
+<body>
+    <h1>Student GPA</h1>
+    <hr>
+
+    <form name="gpas" action="javascript:addGPA()">
+        <label for="firstname">Name:</label>
+        <input type="text" name="firstname" id="firstname">
+
+        <label for="gpa">GPA:</label>
+        <input type="text" name="gpa" id="gpa">
+
+        <input type="submit">
+    </form>
+
+    <H2>Get GPA</H2>
+
+    <form name="gpas" action="javascript:getGPA()">
+        <label for="firstname">Name:</label>
+        <input type="text" name="firstnameGet" id="firstnameGet">
+
+        <input type="submit">
+    </form>
+
+
+    <div id="results">(Results)</div>
+
+    
+</body>
+</html>
