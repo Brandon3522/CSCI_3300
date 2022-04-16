@@ -1,0 +1,153 @@
+<!--
+    Brandon Sitz
+    Assginment 6
+    Dr. Church
+    CSCI 3300-04
+    Apr 15, 2022
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css" />
+    <script>
+        let participantScores = [];
+
+        function getSmallest(participantScores) {
+            let smallest = participantScores[0];
+
+            for (let value of participantScores) {
+                if (smallest > value) {
+                    smallest = value;                    
+                }
+            }
+            return smallest;
+        }
+
+        function getLargest(participantScores) {
+            let largest = participantScores[0];
+
+            for (let value of participantScores) {
+                if (largest < value) {
+                    largest = value;                    
+                }
+            }
+            return largest;
+        }
+
+        function sumValues(participantScores) {
+            let sum = 0;
+
+            for (let value of participantScores) {
+                sum += value;
+            }
+            return sum;
+        }
+
+        function getUnbiasedAverage(participantScores) {
+            let smallest = getSmallest(participantScores);
+            let largest = getLargest(participantScores);
+            let unbiasedAverage = 0;
+            let total = 0;
+
+            for (let i = 0; i < participantScores.length; i++) {
+                if (participantScores[i] == smallest || participantScores[i] == largest) {
+                    participantScores.splice(i, 1);
+                }
+                total += 1;                
+            }
+
+            let sum = sumValues(participantScores);
+            unbiasedAverage = sum / total;
+
+            return unbiasedAverage;
+        }
+
+        function calculateScore() {
+            let participant1 = document.getElementById('judgeA').value;
+            let participant2 = document.getElementById('judgeB').value;
+            let participant3 = document.getElementById('judgeC').value;
+            let participant4 = document.getElementById('judgeD').value;
+            let participant5 = document.getElementById('judgeE').value;
+            let participant6 = document.getElementById('judgeF').value;
+            let participant7 = document.getElementById('judgeG').value;
+            let participant8 = document.getElementById('judgeH').value;
+            let message = '';
+
+            
+
+            if (isNaN(participant1) || isNaN(participant2) || isNaN(participant3) || isNaN(participant4) ||
+                isNaN(participant5) || isNaN(participant6) || isNaN(participant7) || isNaN(participant8)) {
+                message += `Please enter valid numbers for each entry.`;
+            }
+            else {
+                participant1 = parseFloat(participant1);
+                participant2 = parseFloat(participant2);
+                participant3 = parseFloat(participant3);
+                participant4 = parseFloat(participant4);
+                participant5 = parseFloat(participant5);
+                participant6 = parseFloat(participant6);
+                participant7 = parseFloat(participant7);
+                participant8 = parseFloat(participant8);
+
+                participantScores.push(participant1);
+                participantScores.push(participant2);
+                participantScores.push(participant3);
+                participantScores.push(participant4);
+                participantScores.push(participant5);
+                participantScores.push(participant6);
+                participantScores.push(participant7);
+                participantScores.push(participant8);
+
+                let unbiasedAverage = getUnbiasedAverage(participantScores);
+                message += `The judges' average score is ${unbiasedAverage.toFixed(2)}`;
+            }
+            
+            document.getElementById('results').innerHTML = message;
+        }
+    </script>
+    <title>Brandon's Olympic Judging Calculator</title>
+</head>
+<body>
+    <h1>Brandon's Olympic Judging Calculator</h1>
+    <hr>
+    
+    <form name="scoreData" id="scoreData" action="javascript:calculateScore()">
+        <label for="judgeA">Country Judge A:</label>
+        <input type="text" id="judgeA">
+
+        <label for="judgeB">Country Judge B:</label>
+        <input type="text" id="judgeB">
+
+        <label for="judgeC">Country Judge C:</label>
+        <input type="text" id="judgeC">
+
+        <label for="judgeD">Country Judge D:</label>
+        <input type="text" id="judgeD">
+
+        <label for="judgeE">Country Judge E:</label>
+        <input type="text" id="judgeE">
+
+        <label for="judgeF">Country Judge F:</label>
+        <input type="text" id="judgeF">
+
+        <label for="judgeG">Country Judge G:</label>
+        <input type="text" id="judgeG">
+
+        <label for="judgeH">Country Judge H:</label>
+        <input type="text" id="judgeH">
+        <br>
+        <br>
+
+        <input type="submit" value="Calculate Score">
+    </form>
+    <br>
+    <br>
+
+    <div id="results">(Results)</div>
+
+    <footer>&copy; 2022 Brandon Sitz</footer>
+</body>
+</html>

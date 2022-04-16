@@ -1,0 +1,95 @@
+<!--
+    Brandon Sitz
+    Assginment 6
+    Dr. Church
+    CSCI 3300-04
+    Apr 15, 2022
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css" />
+    <script>
+        let products = {
+            'Umbrella': 14.95,
+            'Rain Coat': 119.99,
+            'Swimsuit': 40.00,
+        };
+
+        function displayProducts(products) {
+            let message = "<ul>";
+            let i = 1;
+            for (let product in products) {
+                message += `<li>Product ${i}. ${product} costs $${products[product].toFixed(2)}</li>`;
+                i++;
+            }
+
+            message += "</ul>"
+            document.getElementById('product').innerHTML = message;
+        }
+        
+
+        // need to persist data between function calls
+        // message and total
+        function calculateOrder() {
+            let quantity = document.getElementById('quantity').value;
+            let selectedElement = document.productForm.products.value;
+            let message = '<ul>';
+            let totalMessage = '';
+            let total = 0;
+
+            for (let value in products) {
+                if (selectedElement == value) {
+                    message += `<li>${value} (Quantity ${quantity}) Cost: $${products[value].toFixed(2)}</li>`;
+                    total += products[value] * quantity;
+                    total = parseFloat(total);
+                }
+            }
+
+
+            message += '</ul>'
+            totalMessage += `Total Price: $${total.toFixed(2)}`
+            document.getElementById('results').innerHTML = message;
+            document.getElementById('total').innerHTML = totalMessage;
+
+        }
+
+    </script>
+    <title>Brandon's Point of Sale System</title>
+</head>
+<body onload="displayProducts(products)">
+    <h1>Brandon's Point of Sale System</h1>
+    <hr>
+
+    <div id="product"></div>
+    <br>
+    
+    <form name="productForm" id="productForm" action="javascript:calculateOrder()">
+        <label for="products">Select a product:</label>
+        <select id="products">
+            <option value="Umbrella">Umbrella</option>
+            <option value="Rain Coat">Rain Coat</option>
+            <option value="Swimsuit">Swimsuit</option>
+        </select>
+        <br>
+        <br>
+
+        <label for="quantity">Enter the quantity:</label>
+        <input type="text" id="quantity">
+        <br>
+        <br>
+
+        <input type="submit" value="Add item to order">
+    </form>
+    <br>
+
+    <div id="results">(Items in cart)</div>
+    <div id="total">(Total)</div>
+
+
+    <footer>&copy; 2022 Brandon Sitz</footer>
+</body>
+</html>

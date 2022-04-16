@@ -1,0 +1,88 @@
+<!--
+    Brandon Sitz
+    Assginment 6
+    Dr. Church
+    CSCI 3300-04
+    Apr 15, 2022
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css" />
+    <script>
+        function getArea(height, width) {
+            let area = 0;
+
+            area = height * width;
+            return area;
+        }
+
+        function getPerimeter(height, width) {
+            let perimeter = 0;
+
+            perimeter = (height + width) * 2;
+            return perimeter;
+        }
+
+        function getOppositeCornerDistance(height, width) {
+            let oppositeCornerDistance = 0;
+
+            oppositeCornerDistance = Math.sqrt(Math.pow(height, 2) + Math.pow(width, 2));
+            return oppositeCornerDistance;
+        }
+
+        function getData() {
+            let height = document.getElementById('height').value;
+            let width = document.getElementById('width').value;
+            let message = '';
+
+            if (isNaN(height) || isNaN(width)) {
+                message += `Please enter a valid number for the height and width.`
+            }
+            else {
+                height = parseFloat(height);
+                width = parseFloat(width);
+                let area = getArea(height, width);
+                let perimeter = getPerimeter(height, width);
+                let oppositeCornerDistance = getOppositeCornerDistance(height, width);
+
+                height = parseFloat(height);
+                width = parseFloat(width);
+
+                message += `The area of the rectangle is ${area} units squared, the perimeter is ${perimeter}
+                    units, and the distance bewtween opposite corners is ${oppositeCornerDistance.toFixed(2)} 
+                    units.`
+            }
+            
+            document.getElementById('results').innerHTML = message;
+        }
+
+    </script>
+    <title>Brandon's Rectangle Calculator</title>
+</head>
+<body>
+    <h1>Brandon's Rectangle Calculator</h1>
+    <hr>
+
+    <form name="myForm" id="myForm" action="javascript:getData()">
+        <label for="height">Height:</label>
+        <input type="text" id="height">
+        <br>
+
+        <label for="width">Width:</label>
+        <input type="text" id="width">
+        <br>
+        <br>
+
+        <input type="submit" value="Calculate">
+    </form>
+
+    <br>
+    <div id="results">(Results)</div>
+
+    <footer>&copy; 2022 Brandon Sitz</footer>
+</body>
+</html>
