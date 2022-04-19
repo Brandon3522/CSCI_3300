@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+        <script src="https://unpkg.com/vue@3"></script>
+        <title>Document</title>
+    </head>
+    <body>
+        <div id="todolist">
+            <h1>To-Do List</h1>
+            <hr />
+            <div>
+                To-Do:
+                <input v-model="newtask" v-on:keyup.enter="addTask()" />
+                <select v-model="priority">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+                <button v-on:click="addTask()">Add task</button>
+            </div>
+            <ul>
+                <li v-for="(task, index) in tasks">
+                    <button v-on:click="removeTask(index)">x</button>
+                    <button v-on:click="done(index)">Done</button>
+
+                    <span v-if="task.done" class="done" >
+                        {{ task.name }} ({{ task.priority }})
+                    </span>
+                    <span v-else class="notdone">
+                        {{ task.name }} ({{ task.priority }})
+                    </span>
+                </li>
+            </ul>
+        </div>
+
+        <script src="index.js"></script>
+    </body>
+</html>
