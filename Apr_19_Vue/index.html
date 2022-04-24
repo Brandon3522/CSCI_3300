@@ -26,7 +26,7 @@
             <ul>
                 <li v-for="(task, index) in tasks">
                     <button v-on:click="removeTask(index)">x</button>
-                    <button v-on:click="done(index)">Done</button>
+                    <button v-on:click="done(index)">Done  </button>
 
                     <span v-if="task.done" class="done" >
                         {{ task.name }} ({{ task.priority }})

@@ -1,31 +1,3 @@
-// const app = {
-//     data() {
-//         return {
-//             newtask: '',
-//             tasks: [
-//                 {name: 'Walk Dog'},
-//                 {name: 'Buy Milk'},
-
-//             ],
-//             methods: {
-//                 addTask() {
-//                     if (this.newtask == '') {
-//                         return;
-//                     }
-//                     let task = {
-//                         name: this.newtask,
-//                     };
-
-//                     this.tasks.push(task);
-//                     this.newtask = '';
-//                 }
-//             },
-//         }
-//     }
-// };
-
-// Vue.createApp(app).mount('#todolist');
-
 const app = {
     data() {
         return {
@@ -49,7 +21,7 @@ const app = {
             this.newtask = "";
 
             this.tasks.sort((a, b) => {
-                if (a.priority < b.priority) return 1;
+                if (a.priority > b.priority) return 1;
                 return -1;
             });
         },
