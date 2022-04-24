@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3"></script>
+    <title>Point of Sale</title>
+</head>
+<body>
+    <h1>Point of Sale</h1>
+    <hr>
+
+    <div id="mypos">
+        <p>Here are the produts for sale.</p>
+        <ul>
+            <li v-for="(product, index) in products">
+                Product {{ index + 1 }}: {{ product.name }} sells for ${{ product.price.toFixed(2) }}.
+            </li>
+        </ul>
+
+        <div>
+            Select a product:
+        </div>
+
+        <div>
+            <select v-model="tobuy">
+                <option v-for="product in products" v-bind:value="product.name">
+                    {{ product.name }}
+                </option>
+            </select>
+        </div>
+
+        <div>
+            Quantity:
+        </div>
+
+        <div>
+            <select v-model="quantity">
+                <option v-for="n in 30" v-bind:value="n">{{ n }}</option>
+            </select>
+        </div>
+        <br>
+
+        <button v-on:click="purchase">Add item to cart</button>
+
+        <hr>
+
+        <p v-if="cart.length == 0">The cart is empty</p>
+
+        <ul>
+            <li v-for="cartItem in cart">
+                {{ cartItem.quantity }}x {{ cartItem.name }} at 
+                    {{ cartItem.price }} for ${{ (cartItem.quantity * cartItem.price).toFixed(2)}}
+            </li>
+        </ul>
+
+        <div>
+            Cart Total: ${{ total.toFixed(2) }}
+        </div>
+
+
+    </div>
+
+
+
+    <script src="index.js"></script>
+</body>
+</html>

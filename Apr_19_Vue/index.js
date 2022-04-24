@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0ec9ba4fa6d2857c08f3d0cf445674de5cb03410
 const app = {
     data() {
         return {
