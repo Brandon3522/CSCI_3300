@@ -23,7 +23,6 @@ const app = {
                 this.userAuthor = '';
                 this.userSubject = '';
             }
-            
         },
     },
 };

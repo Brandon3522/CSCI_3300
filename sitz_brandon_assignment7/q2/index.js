@@ -80,10 +80,6 @@ const app = {
             }
             return converted.toFixed(3) + this.selectedDistance;
         },
-        // mounted() {
-        //     console.log('created');
-        //     this.convertDistance();
-        // }
     },
 };
 

@@ -23,7 +23,7 @@
         <label for="distance">Distance 1:</label>
         <input id="distance" v-model="distance">
 
-        <select v-model="selectedUnit" v-bind:value="unit">
+        <select v-model="selectedUnit">
             <option v-for="unit in units">
                 {{ unit }}
             </option>
@@ -32,7 +32,7 @@
         <br>
 
         <label>Conversion type:</label>
-        <select v-model="selectedDistance" v-bind:value="distance">
+        <select v-model="selectedDistance">
             <option v-for="distance in distances">
                 {{ distance }}
             </option>
@@ -43,14 +43,8 @@
         <br>
 
             {{ convertedDistance }}
-
-
     </div>
     
-
-
-
-
     <script src="index.js"></script>
     <footer>&copy; 2022 Brandon Sitz</footer>
 </body>
