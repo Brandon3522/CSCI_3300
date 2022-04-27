@@ -1,0 +1,57 @@
+<!--
+    Brandon Sitz
+    Assginment 7
+    Dr. Church
+    CSCI 3300-04
+    Apr 27, 2022
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3"></script>
+    <link rel="stylesheet" href="../style.css" />
+    <title>Brandon's Distance Conversion Application</title>
+</head>
+<body>
+    <h1>Brandon's Distance Conversion Application</h1>
+    <hr>
+
+    <div id="distanceConversion">
+        <label for="distance">Distance 1:</label>
+        <input id="distance" v-model="distance">
+
+        <select v-model="selectedUnit" v-bind:value="unit">
+            <option v-for="unit in units">
+                {{ unit }}
+            </option>
+        </select>
+        <br>
+        <br>
+
+        <label>Conversion type:</label>
+        <select v-model="selectedDistance" v-bind:value="distance">
+            <option v-for="distance in distances">
+                {{ distance }}
+            </option>
+        </select>
+        <br>
+        <button v-on:click="convertDistance()">Convert Distance</button>
+        <br>
+        <br>
+
+            {{ convertedDistance }}
+
+
+    </div>
+    
+
+
+
+
+    <script src="index.js"></script>
+    <footer>&copy; 2022 Brandon Sitz</footer>
+</body>
+</html>

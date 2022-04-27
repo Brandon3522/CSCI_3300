@@ -1,0 +1,32 @@
+label {
+    width: 100%;
+    display: inline-block;
+}
+
+input {
+    display: inline-block;
+}
+
+#secret {
+    font-size: xx-large;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    font-family: "Times New Roman";
+    font-weight: bold;
+}
+
+html {
+    background-image: linear-gradient(grey, white);
+    background-repeat: no-repeat;
+}
+
+#button {
+    border-radius: 20px;
+}
+
+input[type="submit"] {
+    border-radius: 20px;
+}
